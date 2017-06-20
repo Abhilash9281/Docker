@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: helloworld-deploy
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: jenkins-demo
+        image: vangariabhilash/jenkins-demo
+        ports:
+        - name: nodejs-port
+          containerPort: 3000
